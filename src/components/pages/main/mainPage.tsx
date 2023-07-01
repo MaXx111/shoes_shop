@@ -11,8 +11,6 @@ export const MainPage: React.FC = () => {
         <>
         <Header />
         <MainConteiner />
-        <TopSales />
-        <Catalog />
         <Footer />
         </>
     )
