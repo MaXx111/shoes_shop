@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom"
-import { HeaderForm } from "./headerForm"
 
 
 export const Header: React.FC = () => {
@@ -49,7 +48,9 @@ export const Header: React.FC = () => {
                                             <div className="header-controls-cart-menu"></div>
                                         </div>
                                     </div>
-                                    <HeaderForm />
+                                    <form data-id="search-form" className="header-controls-search-form form-inline invisible">
+                                        <input className="form-control" placeholder="Поиск" />
+                                    </form>
                                 </div>
                             </div>
                         </nav>
