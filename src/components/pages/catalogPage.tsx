@@ -1,6 +1,6 @@
-import { Footer } from "../../Footer"
-import { Header } from "../../Header"
-import { Catalog } from "../../widgets/catalog"
+import { Footer } from "../Footer"
+import { Header } from "../Header"
+import { Catalog } from "../widgets/catalog"
 
 
 export const CatalogPage: React.FC = () => {
