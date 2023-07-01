@@ -9,7 +9,7 @@ export const MainConteiner: React.FC = () => {
                 <div className="row">
                     <div className="col">
                         <Banner />
-                        
+
                     </div>
                 </div>
             </main>
