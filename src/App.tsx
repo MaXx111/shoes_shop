@@ -5,6 +5,7 @@ import { CatalogPage } from './components/pages/catalogPage'
 import { AboutPage } from './components/pages/aboutPage'
 import { ContactsPage } from './components/pages/contacts'
 import { NotFoundPage } from './components/pages/404Page'
+import { CartPage } from './components/pages/cart/cartPage'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="shoes_shop/catalog" element={<CatalogPage />}/>
           <Route path="shoes_shop/about" element={<AboutPage />}/>
           <Route path="shoes_shop/contacts" element={<ContactsPage />}/>
+          <Route path="shoes_shop/cart" element={<CartPage />}/>
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
     </>
