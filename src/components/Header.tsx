@@ -21,19 +21,19 @@ export const Header: React.FC = () => {
                                         Главная
                                     </NavLink>
                                     <NavLink 
-                                      to="/shoes_shop/catalog.html"
+                                      to="/shoes_shop/catalog"
                                       className={({ isActive }) => classForNavLink(isActive)}
                                     >
                                         Каталог
                                     </NavLink>
                                     <NavLink 
-                                      to="/shoes_shop/about.html"
+                                      to="/shoes_shop/about"
                                       className={({ isActive }) => classForNavLink(isActive)}
                                     >
                                         О магазине
                                     </NavLink>
                                     <NavLink 
-                                      to="/shoes_shop/contacts.html"
+                                      to="/shoes_shop/contacts"
                                       className={({ isActive }) => classForNavLink(isActive)}
                                     >
                                         Контакты

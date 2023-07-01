@@ -11,19 +11,19 @@ export const Footer: React.FC = () => {
                             <h5>Информация</h5>
                             <ul className="nav flex-column">
                                 <NavLink
-                                to='/shoes_shop/about.html'
+                                to='/shoes_shop/about'
                                 className={({ isActive }) => classForNavLink(isActive)}
                                 >
                                     О магазине
                                 </NavLink>
                                 <NavLink
-                                to='/shoes_shop/catalog.html'
+                                to='/shoes_shop/catalog'
                                 className={({ isActive }) => classForNavLink(isActive)}
                                 >
                                     Каталог
                                 </NavLink>
                                 <NavLink
-                                to='/shoes_shop/contacts.html'
+                                to='/shoes_shop/contacts'
                                 className={({ isActive }) => classForNavLink(isActive)}
                                 >
                                     Контакты
