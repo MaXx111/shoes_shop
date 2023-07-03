@@ -1,6 +1,6 @@
-import { Footer } from "../widgets/Footer"
-import { Header } from "../widgets/Header"
-import { Banner } from "../shared/banner"
+import { Footer } from "../../widgets/Footer"
+import { Header } from "../../widgets/Header"
+import { Banner } from "../../shared/banner"
 
 
 export const AboutPage: React.FC = () => {
