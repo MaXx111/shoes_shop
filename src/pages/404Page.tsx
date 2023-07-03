@@ -1,6 +1,6 @@
-import { Footer } from "../Footer"
-import { Header } from "../Header"
-import { Banner } from "../banner"
+import { Footer } from "../widgets/Footer"
+import { Header } from "../widgets/Header"
+import { Banner } from "../shared/banner"
 
 
 export const NotFoundPage: React.FC = () => {

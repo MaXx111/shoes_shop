@@ -1,5 +1,5 @@
-import { Footer } from "../Footer"
-import { Header } from "../Header"
+import { Footer } from "../widgets/Footer"
+import { Header } from "../widgets/Header"
 import { Catalog } from "../widgets/catalog"
 
 
