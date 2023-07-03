@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { CatalogLoader } from "../entities/loaders/catalogLoader";
 
 interface CatalogProps {
     children?: ReactNode
@@ -12,12 +13,7 @@ export const Catalog: React.FC<CatalogProps> = ({children}) => {
             <section className="catalog">
                 <h2 className="text-center">Каталог</h2>
                 {children}
-                <div className="preloader">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <CatalogLoader />
           </section>
         </>
     )

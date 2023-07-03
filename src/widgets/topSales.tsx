@@ -1,3 +1,4 @@
+import { TopSalseLoader } from "../entities/loaders/topSalesLoader"
 
 
 export const TopSales: React.FC = () => {
@@ -6,12 +7,7 @@ export const TopSales: React.FC = () => {
         <>
             <section className="top-sales">
                 <h2 className="text-center">Хиты продаж!</h2>
-                <div className="preloader">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <TopSalseLoader />
             </section>
         </>
     )
