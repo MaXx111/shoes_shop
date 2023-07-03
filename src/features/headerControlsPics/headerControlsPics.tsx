@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { CartMenuNumber } from "../../shared/UI/carnMenuNumber"
 import { CartMenuIcon } from "../../shared/UI/cartMenuIcon"
 import { SearchIcon } from "../../shared/UI/searchIcon"
+import { useState } from "react"
 
 
 export const HeaderControlsPics: React.FC = () => {
@@ -13,7 +14,16 @@ export const HeaderControlsPics: React.FC = () => {
     }
 
     const searchIconHandler = () => {
+        setFormToggle(!formToggle)
+    }
 
+    const [formToggle, setFormToggle] = useState(false);
+
+    const [formValue, setFormValue] = useState('')
+
+    const formHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+        
+        setFormValue(e.target.value)
     }
 
     return(
@@ -27,9 +37,9 @@ export const HeaderControlsPics: React.FC = () => {
                         <CartMenuIcon />
                     </div>
                 </div>
-                <form data-id="search-form" className="header-controls-search-form form-inline invisible">
-                    <input className="form-control" placeholder="Поиск" />
-                </form>
+                {formToggle && <form data-id="search-form" className='header-controls-search-form form-inline'>
+                    <input className="form-control" placeholder="Поиск" value={formValue} onChange={formHandler} />
+                </form>}
             </div>
         </>
     )
