@@ -13,11 +13,17 @@ export const HeaderControlsPics: React.FC = () => {
         navigate('/shoes_shop/cart')
     }
 
+    const [formToggle, setFormToggle] = useState(false);
+
     const searchIconHandler = () => {
+
+        if(formToggle && formValue !== '') {
+            submitHandler()
+            setFormValue('')
+        }
+
         setFormToggle(!formToggle)
     }
-
-    const [formToggle, setFormToggle] = useState(false);
 
     const [formValue, setFormValue] = useState('')
 
@@ -26,18 +32,21 @@ export const HeaderControlsPics: React.FC = () => {
         setFormValue(e.target.value)
     }
 
+    const submitHandler = () => {
+        console.log(`submit`)
+    }
+
     return(
         <>
             <div>
                 <div className="header-controls-pics">
                     <SearchIcon clickHandler={searchIconHandler}/>
-                    {/* <!-- Do programmatic navigation on click to /cart.html --> */}
                     <div className="header-controls-pic header-controls-cart" onClick={cartClickHandler}>
                         <CartMenuNumber count={3}/>
                         <CartMenuIcon />
                     </div>
                 </div>
-                {formToggle && <form data-id="search-form" className='header-controls-search-form form-inline'>
+                {formToggle && <form data-id="search-form" className='header-controls-search-form form-inline' onSubmit={submitHandler}>
                     <input className="form-control" placeholder="Поиск" value={formValue} onChange={formHandler} />
                 </form>}
             </div>
