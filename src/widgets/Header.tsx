@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
                     <div className="col">
                         <nav className="navbar navbar-expand-sm navbar-light bg-light">
                             <NavLink className="navbar-brand" to="/shoes_shop/">
-                                <img src="header-logo.png" alt="Bosa Noga" />
+                                <img src="/header-logo.png" alt="Bosa Noga" />
                             </NavLink>
                             <div className="collapse navbar-collapse" id="navbarMain">
                                 <HeaderNav />
