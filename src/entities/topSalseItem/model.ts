@@ -1,7 +1,8 @@
 export interface topSalesItem {
     category: number,
     id: number,
-    images: string[],
+    images: string[] | string,
     price: number,
     title: string
 }
+

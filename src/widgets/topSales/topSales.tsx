@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { TopSalseLoader } from "../../entities/loaders/topSalesLoader"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { fetchTopSalse } from "./api/topSalesApi"
+import { TopSalesList } from "../../features/topSalesList/topSalesList"
 
 
 export const TopSales: React.FC = () => {
@@ -22,8 +23,7 @@ export const TopSales: React.FC = () => {
                 <h2 className="text-center">Хиты продаж!</h2>
                 {loading && <TopSalseLoader />}
                 {!loading && error && <p>{error}</p>}
-                {!loading && !error &&
-                <p>ujnj</p>
+                {!loading && !error && <TopSalesList />
                 }
             </section>
         </>
