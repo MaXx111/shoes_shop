@@ -10,7 +10,6 @@ export const TopSalesItem: React.FC<TopSalseItemProps> = ({product}) => {
     const pruductOnClick = () => {
         console.log('click')
     }
-console.log(`item`, product.images[1])
 
     return(
         <>

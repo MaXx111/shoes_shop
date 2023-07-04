@@ -7,15 +7,13 @@ import { TopSalesList } from "../../features/topSalesList/topSalesList"
 
 export const TopSales: React.FC = () => {
 
-    const {loading, items, error} = useAppSelector(state => state.TopSalseReducer)
+    const {loading, error} = useAppSelector(state => state.TopSalseReducer)
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
         dispatch(fetchTopSalse());
     },[])
-
-    console.log(items)
 
     return (
         <>
