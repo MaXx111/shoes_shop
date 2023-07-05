@@ -1,8 +1,8 @@
 import { useEffect } from "react"
-import { TopSalseLoader } from "../../entities/loaders/topSalesLoader"
-import { useAppDispatch, useAppSelector } from "../../app/hooks"
-import { fetchTopSalse } from "./api/topSalesApi"
-import { TopSalesList } from "../../features/topSalesList/topSalesList"
+import { TopSalseLoader } from "../../../entities/loaders/topSalesLoader"
+import { useAppDispatch, useAppSelector } from "../../../app/hooks"
+import { fetchTopSalse } from "../api/topSalesApi"
+import { TopSalesList } from "./topSalesList/topSalesList"
 
 
 export const TopSales: React.FC = () => {

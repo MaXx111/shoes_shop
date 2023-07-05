@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 import { SizeItem } from "../../../../shared/UI/sizeItem"
 import { ProductInfoSlice } from "../../model/slice"

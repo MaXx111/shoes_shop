@@ -1,5 +1,5 @@
 import { FormSearch } from "../../features/formSearch/formSearch"
-import { Catalog } from "../../widgets/catalog"
+import { Catalog } from "../../widgets/catalog/lib/catalog"
 import { PatternPage } from "../patternPage"
 
 

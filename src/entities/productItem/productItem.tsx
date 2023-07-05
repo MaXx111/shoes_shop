@@ -1,16 +1,18 @@
+import React from "react";
 import { OrderProductLink } from "../../shared/UI/orderProductLink";
 import { topSalesItem } from "./model"
 
-interface TopSalseItemProps {
+interface ProductItemProps {
     product: topSalesItem;
+    classNameItem: string
 }
 
-export const TopSalesItem: React.FC<TopSalseItemProps> = ({product}) => {
+const ProductItem: React.FC<ProductItemProps> = ({product, classNameItem}) => {
 
     return(
         <>
         <div className="col-4">
-                <div className="card">
+                <div className={classNameItem}>
                   <img src={product.images[0]}
                     className="card-img-top img-fluid" alt={product.title} />
                   <div className="card-body">
@@ -23,3 +25,5 @@ export const TopSalesItem: React.FC<TopSalseItemProps> = ({product}) => {
         </>
     )
 }
+
+export default React.memo(ProductItem)
