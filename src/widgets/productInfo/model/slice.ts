@@ -38,6 +38,10 @@ export const ProductInfoSlice = createSlice({
     name: 'ProductInfo',
     initialState,
     reducers:{
+        setInitialState(state) {
+            state.selected = initialState.selected,
+            state.productCount = initialState.productCount
+        },
         addSelected(state, action) {
             state.selected = action.payload
         },

@@ -5,6 +5,7 @@ import { fetchProductInfo } from "../api/productInfoApi";
 import { AddToCartBtn } from "../../../shared/UI/addToCartBtn";
 import { ProductMoreInfo } from "../../../entities/productItemInfo/productMoreInfo";
 import { SizesControl } from "./sizesControl/sizesControl";
+import { ProductInfoSlice } from "../model/slice";
 
 
 export const ProductInfo: React.FC = () => {
@@ -16,6 +17,7 @@ export const ProductInfo: React.FC = () => {
     const {loading, error, product, selected, productCount} = useAppSelector(state => state.ProductInfoReducer);
     
     useEffect(() => {
+        dispatch(ProductInfoSlice.actions.setInitialState())
         dispatch(fetchProductInfo(params.id!))
     },[])
 
