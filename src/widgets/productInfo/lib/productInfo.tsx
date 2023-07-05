@@ -6,6 +6,7 @@ import { AddToCartBtn } from "../../../shared/UI/addToCartBtn";
 import { ProductMoreInfo } from "../../../entities/productItemInfo/productMoreInfo";
 import { SizesControl } from "./sizesControl/sizesControl";
 import { ProductInfoSlice } from "../model/slice";
+import { ProductInfoLoader } from "../../../entities/loaders/productInfoLoader";
 
 
 export const ProductInfo: React.FC = () => {
@@ -28,6 +29,8 @@ export const ProductInfo: React.FC = () => {
 
     return(
         <>
+            {loading && <ProductInfoLoader />}
+            {!loading && error && <p>{error}</p>}
             {!loading && !error && 
             <section className="catalog-item">
                 <h2 className="text-center">{product.title}</h2>
