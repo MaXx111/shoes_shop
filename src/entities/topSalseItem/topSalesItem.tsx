@@ -7,10 +7,6 @@ interface TopSalseItemProps {
 
 export const TopSalesItem: React.FC<TopSalseItemProps> = ({product}) => {
 
-    const pruductOnClick = () => {
-        console.log('click')
-    }
-
     return(
         <>
         <div className="col-4">
@@ -20,7 +16,7 @@ export const TopSalesItem: React.FC<TopSalseItemProps> = ({product}) => {
                   <div className="card-body">
                     <p className="card-text">{product.title}</p>
                     <p className="card-text">{product.price} руб.</p>
-                    <OrderProductLink link={product.id} clickHandler={pruductOnClick}/>
+                    <OrderProductLink link={product.id}/>
                   </div>
                 </div>
               </div>

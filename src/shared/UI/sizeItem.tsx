@@ -1,20 +1,15 @@
-import { useState } from "react"
 
 interface SizeItemProps {
-    size: string
+    size: string,
+    selected: string,
+    clickHandler: (size: string) => void
 }
 
-export const SizeItem: React.FC<SizeItemProps> = ({size}) => {
-
-    const [toggle, setToggle] = useState(false)
-
-    const clickHandler = () => {
-        setToggle(!toggle)
-    }
+export const SizeItem: React.FC<SizeItemProps> = ({size, selected, clickHandler}) => {
 
     return(
         <>
-            <span className={`catalog-item-size ${!toggle && 'selected'}`} onClick={clickHandler}>{size}</span>
+            <span className={size == selected ? 'catalog-item-size selected' : 'catalog-item-size'} onClick={() => clickHandler(size)}>{size}</span>
         </>
     )
 }

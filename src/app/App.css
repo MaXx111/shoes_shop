@@ -186,6 +186,14 @@ section {
   padding: 0 10px;
 }
 
+.catalog-item-size:hover {
+  cursor: pointer;
+}
+
+.catalog-item-size:active {
+  cursor: auto;
+}
+
 .catalog-item-size.selected {
   background: #727e86;
   border-radius: 15px;
@@ -305,3 +313,4 @@ h2, .h2 {
   background-color: #727e86;
   border-color: #727e86;
 }
+
