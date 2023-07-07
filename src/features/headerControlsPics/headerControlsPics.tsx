@@ -3,6 +3,8 @@ import { CartMenuNumber } from "../../shared/UI/carnMenuNumber"
 import { CartMenuIcon } from "../../shared/UI/cartMenuIcon"
 import { SearchIcon } from "../../shared/UI/searchIcon"
 import { useState } from "react"
+import { useAppDispatch } from "../../app/hooks"
+import { CatalogSlice } from "../../widgets/catalog/model/slice"
 
 
 export const HeaderControlsPics: React.FC = () => {
@@ -18,7 +20,9 @@ export const HeaderControlsPics: React.FC = () => {
     const searchIconHandler = () => {
 
         if(formToggle && formValue !== '') {
-            submitHandler()
+            
+            dispatch(CatalogSlice.actions.addSearchValue(formValue))
+            navigate('/shoes_shop/catalog')
             setFormValue('')
         }
 
@@ -27,13 +31,20 @@ export const HeaderControlsPics: React.FC = () => {
 
     const [formValue, setFormValue] = useState('')
 
-    const formHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         
         setFormValue(e.target.value)
     }
 
-    const submitHandler = () => {
-        console.log(`submit`)
+    const dispatch = useAppDispatch()
+
+    const submitHandler = (e: React.FocusEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        dispatch(CatalogSlice.actions.addSearchValue(formValue))
+
+        navigate('/shoes_shop/catalog')
+        setFormValue('');
     }
 
     return(
@@ -47,7 +58,7 @@ export const HeaderControlsPics: React.FC = () => {
                     </div>
                 </div>
                 {formToggle && <form data-id="search-form" className='header-controls-search-form form-inline' onSubmit={submitHandler}>
-                    <input className="form-control" placeholder="Поиск" value={formValue} onChange={formHandler} />
+                    <input className="form-control" placeholder="Поиск" value={formValue} onChange={inputHandler} />
                 </form>}
             </div>
         </>

@@ -9,7 +9,7 @@ interface ProductItemProps {
 
 const ProductItem: React.FC<ProductItemProps> = ({product, classNameItem}) => {
 
-    return(
+  return(
         <>
         <div className="col-4">
                 <div className={classNameItem}>

@@ -1,11 +1,15 @@
 import React from "react";
 
-export const MoreItems: React.FC = () => {
+interface MoreItemsProps {
+    moreBtnHandler: () => void
+}
+
+export const MoreItems: React.FC<MoreItemsProps> = ({moreBtnHandler}) => {
 
     return(
         <>
             <div className="text-center">
-                <button className="btn btn-outline-primary">Загрузить ещё</button>
+                <button className="btn btn-outline-primary" onClick={moreBtnHandler}>Загрузить ещё</button>
             </div>
         </>
     )
