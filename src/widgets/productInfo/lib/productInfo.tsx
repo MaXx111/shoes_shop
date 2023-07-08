@@ -36,16 +36,16 @@ export const ProductInfo: React.FC = () => {
             title: product.title,
             size: selected,
             count: productCount,
-            cost: product.price,
+            price: product.price,
             totalCost: productCount * product.price,
-            productId: Number(params.id),
-            id: v4()
+            productId: v4(),
+            id: Number(params.id)
         }
         
         let upgrade = false
 
         cartItems.map(cartItem => {
-            if(cartItem.productId == item.productId  && cartItem.size == item.size) {
+            if(cartItem.id == item.id && cartItem.size == item.size) {
                 upgrade = true
             }
         })

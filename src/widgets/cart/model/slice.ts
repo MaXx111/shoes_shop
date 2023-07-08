@@ -1,5 +1,6 @@
 import { createSlice} from "@reduxjs/toolkit";
 import { CartItem } from "./type";
+import { fetchCartPost } from "../api/postFetchCart";
 
 interface initialStateProps {
     cartItems: CartItem[],
@@ -17,7 +18,7 @@ const initialState: initialStateProps = {
 
 
 export const CartSlice = createSlice({
-    name: 'ProductInfo',
+    name: 'Cart',
     initialState,
     reducers: {
         addToCart(state, action) {
@@ -25,7 +26,7 @@ export const CartSlice = createSlice({
             state.countItems = state.cartItems.length;
         },
         deleteItem(state, action) {
-            state.cartItems = state.cartItems.filter(item => item.id !== action.payload.id);
+            state.cartItems = state.cartItems.filter(item => item.productId !== action.payload.productId);
             state.countItems = state.cartItems.length
         },
         upgradeItem(state, action) {
@@ -34,6 +35,14 @@ export const CartSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+            .addCase(fetchCartPost.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(fetchCartPost.fulfilled, (state) => {
+                state.loading = false,
+                state.cartItems = initialState.cartItems
+                state.countItems = initialState.countItems
+            })
             
     }
 })
@@ -43,9 +52,8 @@ export default CartSlice.reducer
 function upgrateCartItems(initial:CartItem[], updrate: CartItem) {
 
     let cart = initial.map(item => {
-        if(item.productId == updrate.productId && item.size == updrate.size) {
+        if(item.id == updrate.id && item.size == updrate.size) {
             item.count = item.count + updrate.count
-            console.log(item)
         }
 
         return item
