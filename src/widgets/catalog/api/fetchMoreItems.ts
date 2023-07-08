@@ -21,7 +21,6 @@ export const fetchMoreItems = createAsyncThunk(
 )
 
 function getUrl(categoryId: number, length: number, seacrchValue: string = '') {
-    console.log(categoryId)
 
     if(categoryId == 1) return `http://localhost:7070/api/items?offset=${length}`
 

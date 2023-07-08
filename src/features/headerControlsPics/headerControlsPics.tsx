@@ -3,11 +3,13 @@ import { CartMenuNumber } from "../../shared/UI/carnMenuNumber"
 import { CartMenuIcon } from "../../shared/UI/cartMenuIcon"
 import { SearchIcon } from "../../shared/UI/searchIcon"
 import { useState } from "react"
-import { useAppDispatch } from "../../app/hooks"
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { CatalogSlice } from "../../widgets/catalog/model/slice"
 
 
 export const HeaderControlsPics: React.FC = () => {
+
+    const {countItems} = useAppSelector(state => state.CartReducer)
 
     const navigate = useNavigate()
 
@@ -53,7 +55,7 @@ export const HeaderControlsPics: React.FC = () => {
                 <div className="header-controls-pics">
                     <SearchIcon clickHandler={searchIconHandler}/>
                     <div className="header-controls-pic header-controls-cart" onClick={cartClickHandler}>
-                        <CartMenuNumber count={3}/>
+                        {countItems > 0 ? <CartMenuNumber count={countItems}/> : false}
                         <CartMenuIcon />
                     </div>
                 </div>

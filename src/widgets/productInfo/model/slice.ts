@@ -7,7 +7,8 @@ interface initialStateProps {
     loading: boolean,
     error: null | string,
     selected: string | null,
-    productCount: number
+    productCount: number,
+    allowToAdd: boolean
 }
 
 const initialState = {
@@ -30,7 +31,8 @@ const initialState = {
     loading: false,
     error: null,
     selected: null,
-    productCount: 0
+    productCount: 0,
+    allowToAdd: false
 } as initialStateProps
 
 
@@ -41,6 +43,7 @@ export const ProductInfoSlice = createSlice({
         setInitialState(state) {
             state.selected = initialState.selected,
             state.productCount = initialState.productCount
+            state.allowToAdd = initialState.allowToAdd
         },
         addSelected(state, action) {
             state.selected = action.payload
@@ -50,6 +53,9 @@ export const ProductInfoSlice = createSlice({
         },
         decrement(state) {
             if(state.productCount >= 1) state.productCount = state.productCount - 1
+        },
+        allowAddToCart(state, action) {
+            state.allowToAdd = action.payload;
         }
     },
     extraReducers: (builder) => {
@@ -60,6 +66,7 @@ export const ProductInfoSlice = createSlice({
             .addCase(fetchProductInfo.fulfilled, (state, action) => {
                 state.loading = false,
                 state.product = action.payload
+                state.allowToAdd = getAllow(action.payload)
             })
             .addCase(fetchProductInfo.rejected, (state, action) => {
                 state.loading = false,
@@ -70,3 +77,16 @@ export const ProductInfoSlice = createSlice({
 })
 
 export default ProductInfoSlice.reducer
+
+function getAllow(product: ProductItem) {
+
+    let allow = false
+
+    product.sizes.map(item => {
+        if(item.available) {
+            allow = true
+        }
+    })
+
+    return allow
+}
