@@ -14,7 +14,7 @@ export const CartItemsList: React.FC<CartItemsListProps> = ({item, number, onCli
         <>
             <tr>
                 <td scope="row">{number}</td>
-                <td><NavLink to={`/shoes_shop/product/${item.productId}`}>{item.title}</NavLink></td>
+                <td><NavLink to={`/shoes_shop/product/${item.id}`}>{item.title}</NavLink></td>
                 <td>{item.size}</td>
                 <td>{item.count}</td>
                 <td>{item.price} руб.</td>

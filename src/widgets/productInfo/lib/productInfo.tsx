@@ -43,17 +43,19 @@ export const ProductInfo: React.FC = () => {
         }
         
         let upgrade = false
+        let index = 0;
 
-        cartItems.map(cartItem => {
+        cartItems.map((cartItem, i) => {
             if(cartItem.id == item.id && cartItem.size == item.size) {
                 upgrade = true
+                index = i
             }
         })
 
         if(!upgrade) dispatch(CartSlice.actions.addToCart(item))
 
-        if(upgrade) dispatch(CartSlice.actions.upgradeItem(item))
-        console.log(upgrade)
+        if(upgrade) dispatch(CartSlice.actions.upgradeItem({count: item.count, index: index}))
+        
         navigate('/shoes_shop/cart')
     }
 

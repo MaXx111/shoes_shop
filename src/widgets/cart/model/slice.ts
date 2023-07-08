@@ -30,7 +30,7 @@ export const CartSlice = createSlice({
             state.countItems = state.cartItems.length
         },
         upgradeItem(state, action) {
-            state.cartItems = upgrateCartItems(state.cartItems, action.payload)
+            state.cartItems[action.payload.index].count += action.payload.count;
         }     
     },
     extraReducers: (builder) => {
@@ -48,16 +48,3 @@ export const CartSlice = createSlice({
 })
 
 export default CartSlice.reducer
-
-function upgrateCartItems(initial:CartItem[], updrate: CartItem) {
-
-    let cart = initial.map(item => {
-        if(item.id == updrate.id && item.size == updrate.size) {
-            item.count = item.count + updrate.count
-        }
-
-        return item
-    })
-
-    return cart
-}
