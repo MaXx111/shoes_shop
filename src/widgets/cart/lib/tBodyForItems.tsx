@@ -7,7 +7,7 @@ import { CartItem } from "../model/type";
 
 export const TBodyForItems: React.FC = () => {
 
-    const {cartItems, loading} = useAppSelector(state => state.CartReducer)
+    const {cartItems} = useAppSelector(state => state.CartReducer)
 
     const dispatch = useAppDispatch();
 
@@ -27,8 +27,6 @@ export const TBodyForItems: React.FC = () => {
         setTotalCost(cost)
         console.log(cartItems)
     }, [cartItems])
-
-    console.log(loading, cartItems)
 
     return(
         <>
