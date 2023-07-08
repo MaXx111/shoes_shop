@@ -8,6 +8,7 @@ import { SizesControl } from "./sizesControl/sizesControl";
 import { ProductInfoSlice } from "../model/slice";
 import { ProductInfoLoader } from "../../../entities/loaders/productInfoLoader";
 import { CartSlice } from "../../cart/model/slice";
+import { v4 } from 'uuid';
 
 
 export const ProductInfo: React.FC = () => {
@@ -19,9 +20,10 @@ export const ProductInfo: React.FC = () => {
     const dispatch = useAppDispatch();
 
     const {loading, error, product, selected, productCount, allowToAdd} = useAppSelector(state => state.ProductInfoReducer);
-
+    
+    const {cartItems} = useAppSelector(state => state.CartReducer)
     useEffect(() => {
-        
+
         dispatch(ProductInfoSlice.actions.setInitialState())
         dispatch(fetchProductInfo(params.id!))
     },[])
@@ -36,12 +38,22 @@ export const ProductInfo: React.FC = () => {
             count: productCount,
             cost: product.price,
             totalCost: productCount * product.price,
-            id: params.id
-
+            productId: Number(params.id),
+            id: v4()
         }
         
-        dispatch(CartSlice.actions.addToCart(item))
+        let upgrade = false
 
+        cartItems.map(cartItem => {
+            if(cartItem.productId == item.productId  && cartItem.size == item.size) {
+                upgrade = true
+            }
+        })
+
+        if(!upgrade) dispatch(CartSlice.actions.addToCart(item))
+
+        if(upgrade) dispatch(CartSlice.actions.upgradeItem(item))
+        console.log(upgrade)
         navigate('/shoes_shop/cart')
     }
 

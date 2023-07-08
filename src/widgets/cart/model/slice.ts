@@ -6,15 +6,13 @@ interface initialStateProps {
     loading: boolean,
     error: null | string,
     countItems: number,
-    totalCostItems: number
 }
 
 const initialState: initialStateProps = {
     cartItems: [],
     loading: false,
     error: null,
-    countItems: 0,
-    totalCostItems: 0
+    countItems: 0
 }
 
 
@@ -25,14 +23,15 @@ export const CartSlice = createSlice({
         addToCart(state, action) {
             state.cartItems = [...state.cartItems, action.payload],
             state.countItems = state.cartItems.length;
-            state.totalCostItems = state.totalCostItems + action.payload.totalCost
         },
         deleteItem(state, action) {
             state.cartItems = state.cartItems.filter(item => item.id !== action.payload.id);
-            state.totalCostItems = state.totalCostItems - action.payload.totalCost;
             state.countItems = state.cartItems.length
-        }
-     },
+        },
+        upgradeItem(state, action) {
+            state.cartItems = upgrateCartItems(state.cartItems, action.payload)
+        }     
+    },
     extraReducers: (builder) => {
         builder
             
@@ -40,3 +39,17 @@ export const CartSlice = createSlice({
 })
 
 export default CartSlice.reducer
+
+function upgrateCartItems(initial:CartItem[], updrate: CartItem) {
+
+    let cart = initial.map(item => {
+        if(item.productId == updrate.productId && item.size == updrate.size) {
+            item.count = item.count + updrate.count
+            console.log(item)
+        }
+
+        return item
+    })
+
+    return cart
+}

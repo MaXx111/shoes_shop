@@ -14,11 +14,11 @@ export const CartItemsList: React.FC<CartItemsListProps> = ({item, number, onCli
         <>
             <tr>
                 <td scope="row">{number}</td>
-                <td><NavLink to={`shoes_shop/product/${item.id}`}>{item.title}</NavLink></td>
+                <td><NavLink to={`shoes_shop/product/${item.productId}`}>{item.title}</NavLink></td>
                 <td>{item.size}</td>
                 <td>{item.count}</td>
                 <td>{item.cost} руб.</td>
-                <td>{item.totalCost} руб.</td>
+                <td>{item.cost * item.count} руб.</td>
                 <td><button className="btn btn-outline-danger btn-sm" onClick={() => onClick(item)}>Удалить</button></td>
             </tr>
         </>
