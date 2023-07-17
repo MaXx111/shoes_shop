@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback, useEffect } from "react";
+import React, { ReactNode, useEffect } from "react";
 import { CatalogLoader } from "../../../entities/loaders/catalogLoader";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { fetchCatalogCategoryes } from "../api/fetchCategoryes.ts";
@@ -44,7 +44,7 @@ export const Catalog: React.FC<CatalogProps> = ({children}) => {
     }
 
     const onMoreBtn = ()=> {
-        let urlParams = {categoryId: selectedCategory, length: products.length, searchValue: searchValue}
+        const urlParams = {categoryId: selectedCategory, length: products.length, searchValue: searchValue}
         dispatch(fetchMoreItems(urlParams))
     }
 

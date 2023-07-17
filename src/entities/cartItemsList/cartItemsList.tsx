@@ -3,7 +3,7 @@ import { CartItem } from "../../widgets/cart/model/type"
 
 interface CartItemsListProps {
     item: CartItem,
-    number: any,
+    number: number,
     onClick: (item: CartItem) => void
 
 }

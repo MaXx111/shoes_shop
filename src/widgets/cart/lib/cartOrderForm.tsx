@@ -34,7 +34,7 @@ export const CartOrderForm: React.FC = () => {
 
         if(cartItems.length == 0) return
 
-        let data = {
+        const data = {
             owner: {
                 phone: phoneValue,
                 address: addressValue
