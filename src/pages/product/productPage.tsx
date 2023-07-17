@@ -7,7 +7,7 @@ export const ProductPage: React.FC = () => {
 
     return(
         <>
-            <PatternPage>
+            <PatternPage bannerImg='../banner.jpg' headerImg='../header-logo.png'>
                 <ProductInfo />
             </PatternPage>
         </>

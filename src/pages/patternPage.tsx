@@ -5,18 +5,20 @@ import { Header } from "../widgets/Header"
 
 
 interface PatternPageProps {
-    children: ReactNode
+    children: ReactNode,
+    bannerImg: string,
+    headerImg: string
 }
 
-export const PatternPage: React.FC<PatternPageProps> = ({children}) => {
+export const PatternPage: React.FC<PatternPageProps> = ({children, bannerImg, headerImg}) => {
 
     return(
         <>
-        <Header />
+        <Header imgLink={headerImg}/>
         <main className="container">
             <div className="row">
                 <div className="col">
-                    <Banner />
+                    <Banner imgLink={bannerImg}/>
                     {children}
                 </div>
             </div>

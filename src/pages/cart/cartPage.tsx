@@ -6,7 +6,7 @@ export const CartPage: React.FC = () => {
 
     return(
         <>
-            <PatternPage>
+            <PatternPage bannerImg='./banner.jpg' headerImg='./header-logo.png'>
                 <Cart />
             </PatternPage>        
         </>

@@ -5,7 +5,7 @@ export const NotFoundPage: React.FC = () => {
 
     return(
         <>
-            <PatternPage>
+            <PatternPage bannerImg='./banner.jpg' headerImg='./header-logo.png'>
                 <section className="top-sales">
                     <h2 className="text-center">Страница не найдена</h2>
                     <p>

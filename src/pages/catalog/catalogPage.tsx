@@ -7,7 +7,7 @@ export const CatalogPage: React.FC = () => {
 
     return(
         <>
-           <PatternPage>
+           <PatternPage bannerImg='./banner.jpg' headerImg='./header-logo.png'>
                 <Catalog>
                     <FormSearch />
                 </Catalog>
