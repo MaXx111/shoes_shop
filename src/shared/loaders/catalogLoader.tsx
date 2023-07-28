@@ -1,4 +1,4 @@
-export const CatalogLoader: React.FC = () => {
+export const CatalogLoader = () => {
 
     return(
         <>

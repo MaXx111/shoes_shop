@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 import { PatternPage } from "../patternPage"
 
 
-export const ContactsPage: React.FC = () => {
+export const ContactsPage = () => {
 
     return(
         <>

@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { fetchCartPost } from "../api/postFetchCart";
 
 
-export const CartOrderForm: React.FC = () => {
+export const CartOrderForm = () => {
 
     const dispatch = useAppDispatch();
 

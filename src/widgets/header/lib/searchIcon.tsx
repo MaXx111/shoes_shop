@@ -2,7 +2,7 @@ interface SearchIconProps {
     clickHandler: () => void
 }
 
-export const SearchIcon: React.FC<SearchIconProps> = ({clickHandler}) => {
+export const SearchIcon = ({clickHandler}: SearchIconProps) => {
 
     return(
         <>

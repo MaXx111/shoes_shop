@@ -1,13 +1,13 @@
 import React from "react";
-import { topSalesItem } from "./model/type"
+import { ProductItem } from "./model/type"
 import { NavLink } from "react-router-dom";
 
 interface ProductItemProps {
-    product: topSalesItem;
+    product: ProductItem;
     classNameItem: string
 }
 
-const ProductItem: React.FC<ProductItemProps> = ({product, classNameItem}) => {
+const ProductItem = ({product, classNameItem}: ProductItemProps) => {
 
   return(
         <>

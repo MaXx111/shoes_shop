@@ -8,7 +8,7 @@ interface CartItemsListProps {
 
 }
 
-export const CartItemsList: React.FC<CartItemsListProps> = ({item, number, onClick}) => {
+export const CartItemsList = ({item, number, onClick}: CartItemsListProps) => {
 
     return(
         <>

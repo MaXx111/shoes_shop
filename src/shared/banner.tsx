@@ -3,7 +3,7 @@ interface BannerProps {
 }
 
 
-export const Banner: React.FC<BannerProps> = ({imgLink}) => {
+export const Banner = ({imgLink}: BannerProps) => {
 
     return(
         <>

@@ -3,7 +3,7 @@ import { PaymentIcons } from "./lib/paymentIcons";
 import { Copyright } from "./lib/copyright";
 import { FooterContacts } from "./lib/footerContacts";
 
-export const Footer: React.FC = () => {
+export const Footer = () => {
 
     return(
         <>

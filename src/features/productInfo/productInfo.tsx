@@ -10,7 +10,7 @@ import { CartSlice } from "../cart/model/slice";
 import { v4 } from 'uuid';
 
 
-export const ProductInfo: React.FC = () => {
+export const ProductInfo = () => {
 
     const params = useParams();
 

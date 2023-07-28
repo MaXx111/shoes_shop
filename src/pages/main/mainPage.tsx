@@ -3,7 +3,7 @@ import { TopSales } from "../../features/topSales/topSales"
 import { PatternPage } from "../patternPage"
 
 
-export const MainPage: React.FC = () => {
+export const MainPage = () => {
 
     return(
         <>

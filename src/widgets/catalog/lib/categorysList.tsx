@@ -9,7 +9,7 @@ interface CategorysListProps {
     active: number
 }
 
-export const CategorysList: React.FC<CategorysListProps> = ({linkHandler, data, active}) => {
+export const CategorysList = ({linkHandler, data, active}: CategorysListProps) => {
 
     return(
         <>

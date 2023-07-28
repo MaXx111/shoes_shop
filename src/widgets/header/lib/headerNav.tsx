@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 
-export const HeaderNav: React.FC = () => {
+export const HeaderNav = () => {
 
     return(
         <>

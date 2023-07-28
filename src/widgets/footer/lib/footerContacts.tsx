@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 
-export const FooterContacts: React.FC = () => {
+export const FooterContacts = () => {
 
     return(
         <>

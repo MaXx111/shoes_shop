@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import { CatalogLoader } from "../../shared/loaders/catalogLoader.tsx";
 import { useAppDispatch, useAppSelector } from "../../app/hooks.ts";
 import { fetchCatalogCategoryes } from "./api/fetchCategoryes.ts";
@@ -15,7 +15,7 @@ interface CatalogProps {
 }
 
 
-export const Catalog: React.FC<CatalogProps> = ({children}) => {
+export const Catalog = ({children}: CatalogProps) => {
 
     const dispatch = useAppDispatch();
 

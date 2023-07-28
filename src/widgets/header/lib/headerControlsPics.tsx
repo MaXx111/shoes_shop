@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import { CatalogSlice } from "../../catalog/model/slice"
 
 
-export const HeaderControlsPics: React.FC = () => {
+export const HeaderControlsPics = () => {
 
     const {countItems} = useAppSelector(state => state.CartReducer)
 

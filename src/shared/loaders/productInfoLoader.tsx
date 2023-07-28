@@ -1,4 +1,4 @@
-export const ProductInfoLoader: React.FC = () => {
+export const ProductInfoLoader = () => {
 
     return(
         <>

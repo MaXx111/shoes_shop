@@ -5,7 +5,7 @@ interface SizeItemProps {
     clickHandler: (size: string) => void
 }
 
-export const SizeItem: React.FC<SizeItemProps> = ({size, selected, clickHandler}) => {
+export const SizeItem = ({size, selected, clickHandler}: SizeItemProps) => {
 
     return(
         <>

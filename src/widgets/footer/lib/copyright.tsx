@@ -1,4 +1,4 @@
-export const Copyright: React.FC = () => {
+export const Copyright = () => {
 
     return(
         <>

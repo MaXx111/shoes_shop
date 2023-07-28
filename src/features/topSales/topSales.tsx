@@ -5,7 +5,7 @@ import { fetchTopSalse } from "./api/topSalesApi"
 import { TopSalesList } from "./lib/topSalesList"
 
 
-export const TopSales: React.FC = () => {
+export const TopSales = () => {
 
     const {loading, error} = useAppSelector(state => state.TopSalseReducer)
 

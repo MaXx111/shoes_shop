@@ -4,7 +4,7 @@ interface MoreItemsProps {
     moreBtnHandler: () => void
 }
 
-export const MoreItemsBtn: React.FC<MoreItemsProps> = ({moreBtnHandler}) => {
+export const MoreItemsBtn = ({moreBtnHandler}: MoreItemsProps) => {
 
     return(
         <>

@@ -1,7 +1,7 @@
 import { PatternPage } from "../patternPage"
 
 
-export const AboutPage: React.FC = () => {
+export const AboutPage = () => {
 
     return(
         <>

@@ -5,7 +5,7 @@ import { CartSlice } from "../model/slice";
 import { CartItem } from "../model/type";
 
 
-export const TBodyForItems: React.FC = () => {
+export const TBodyForItems = () => {
 
     const {cartItems} = useAppSelector(state => state.CartReducer)
 

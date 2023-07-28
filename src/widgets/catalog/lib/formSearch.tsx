@@ -1,10 +1,9 @@
-import React from "react"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { CatalogSlice } from "../model/slice";
 import { fetchSearchItems } from "../api/fetchSearchItems";
 
 
-export const FormSearch: React.FC = () => {
+export const FormSearch = () => {
 
     const {searchValue} = useAppSelector(state => state.CatalogReducer)
 

@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import { SizeItem } from "./sizeItem"
 import { ProductInfoSlice } from "../model/slice"
 
-export const ProductSizesControl: React.FC = () => {
+export const ProductSizesControl = () => {
 
     const {product, selected, productCount} = useAppSelector(state => state.ProductInfoReducer)
     const dispatch = useAppDispatch()
@@ -25,7 +25,13 @@ export const ProductSizesControl: React.FC = () => {
             {product.sizes &&
                 <div className="text-center">
                     <p>Размеры в наличии: 
-                        {product.sizes.map(item => item.available && <SizeItem key={item.size} size={item.size} clickHandler={onSizeBtnClick} selected={selected!}/>)}
+                        {product.sizes.map(item => item.available && 
+                        <SizeItem 
+                        key={item.size} 
+                        size={item.size} 
+                        clickHandler={onSizeBtnClick} 
+                        selected={selected!}
+                        />)}
                     </p>
                     <p>Количество: <span className="btn-group btn-group-sm pl-2">
                         <button className="btn btn-secondary" onClick={decrement}>-</button>

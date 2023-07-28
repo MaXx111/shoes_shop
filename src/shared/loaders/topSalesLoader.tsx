@@ -1,6 +1,6 @@
 
 
-export const TopSalseLoader: React.FC = () => {
+export const TopSalseLoader = () => {
 
     return(
         <>

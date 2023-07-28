@@ -1,6 +1,6 @@
-export interface topSalesItem {
+export interface ProductItem {
     id: number,
-    images: string[] | string,
+    images: string[],
     price: number,
     title: string
 }

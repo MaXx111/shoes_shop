@@ -6,7 +6,7 @@ interface HeaderProps {
     imgLink: string
 }
 
-export const Header: React.FC<HeaderProps> = ({imgLink}) => {
+export const Header = ({imgLink}: HeaderProps) => {
 
 
     return(

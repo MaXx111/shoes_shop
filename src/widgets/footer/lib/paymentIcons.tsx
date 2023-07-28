@@ -1,6 +1,6 @@
 
 
-export const PaymentIcons: React.FC = () => {
+export const PaymentIcons = () => {
 
     return(
         <>

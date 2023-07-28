@@ -2,7 +2,7 @@ import { Cart } from "../../features/cart/cart"
 import { PatternPage } from "../patternPage"
 
 
-export const CartPage: React.FC = () => {
+export const CartPage = () => {
 
     return(
         <>

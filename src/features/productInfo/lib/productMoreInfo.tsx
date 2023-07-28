@@ -9,7 +9,7 @@ interface ProductMoreInfoProps {
     }
 }
 
-export const ProductMoreInfo: React.FC<ProductMoreInfoProps> = ({product}) => {
+export const ProductMoreInfo = ({product}: ProductMoreInfoProps) => {
 
     return(
         <>

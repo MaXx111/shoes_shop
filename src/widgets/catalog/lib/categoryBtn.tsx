@@ -1,5 +1,3 @@
-import React from "react"
-
 interface CategoryBtnProps {
     linkHandler: (id: number) => void,
     data: {
@@ -9,7 +7,7 @@ interface CategoryBtnProps {
     active: number
 }
 
-export const CategoryBtn: React.FC<CategoryBtnProps> = ({linkHandler, data, active}) => {
+export const CategoryBtn = ({linkHandler, data, active}: CategoryBtnProps) => {
 
     const clickHandler = (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault();
@@ -19,9 +17,9 @@ export const CategoryBtn: React.FC<CategoryBtnProps> = ({linkHandler, data, acti
 
     return(
         <>
-        <li className="nav-item">
+            <li className="nav-item">
                 <a className={ active == data.id ?  'nav-link active' : 'nav-link' } href="" onClick={clickHandler}>{data.title}</a>
-        </li>
+            </li>
         </>
     )
 }

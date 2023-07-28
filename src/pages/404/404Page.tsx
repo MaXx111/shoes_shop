@@ -1,7 +1,7 @@
 import { PatternPage } from "../patternPage"
 
 
-export const NotFoundPage: React.FC = () => {
+export const NotFoundPage = () => {
 
     return(
         <>

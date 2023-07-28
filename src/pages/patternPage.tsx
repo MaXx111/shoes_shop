@@ -10,7 +10,7 @@ interface PatternPageProps {
     headerImg: string
 }
 
-export const PatternPage: React.FC<PatternPageProps> = ({children, bannerImg, headerImg}) => {
+export const PatternPage = ({children, bannerImg, headerImg}: PatternPageProps) => {
 
     return(
         <>

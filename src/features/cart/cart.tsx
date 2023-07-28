@@ -1,7 +1,7 @@
 import { CartOrderForm } from "./lib/cartOrderForm"
 import { TBodyForItems } from "./lib/tBodyForItems"
 
-export const Cart: React.FC = () => {
+export const Cart = () => {
 
     return(
         <>

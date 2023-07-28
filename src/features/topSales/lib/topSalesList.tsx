@@ -2,7 +2,7 @@ import { useAppSelector } from "../../../app/hooks"
 import ProductItem from "../../../entities/productItem/productItem"
 
 
-export const TopSalesList: React.FC = () => {
+export const TopSalesList = () => {
 
     const { items } = useAppSelector(state => state.TopSalseReducer)
 

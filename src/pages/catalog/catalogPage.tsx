@@ -3,7 +3,7 @@ import { Catalog } from "../../widgets/catalog/catalog"
 import { PatternPage } from "../patternPage"
 
 
-export const CatalogPage: React.FC = () => {
+export const CatalogPage = () => {
 
     return(
         <>

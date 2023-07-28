@@ -1,8 +1,7 @@
-import React from "react";
 import { useAppSelector } from "../../../app/hooks";
 import ProductItem from "../../../entities/productItem/productItem";
 
-export const CatalogListItem: React.FC = () => {
+export const CatalogListItem = () => {
 
     const {products} = useAppSelector(state => state.CatalogReducer)
 
