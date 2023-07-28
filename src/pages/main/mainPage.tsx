@@ -1,5 +1,5 @@
-import { Catalog } from "../../widgets/catalog/lib/catalog"
-import { TopSales } from "../../widgets/topSales/lib/topSales"
+import { Catalog } from "../../widgets/catalog/catalog"
+import { TopSales } from "../../features/topSales/topSales"
 import { PatternPage } from "../patternPage"
 
 

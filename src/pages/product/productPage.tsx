@@ -1,5 +1,5 @@
 import { PatternPage } from "../patternPage"
-import { ProductInfo } from "../../widgets/productInfo/lib/productInfo"
+import { ProductInfo } from "../../features/productInfo/productInfo"
 
 
 export const ProductPage: React.FC = () => {

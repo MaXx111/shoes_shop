@@ -1,4 +1,4 @@
-import { Cart } from "../../widgets/cart/lib/cart"
+import { Cart } from "../../features/cart/cart"
 import { PatternPage } from "../patternPage"
 
 

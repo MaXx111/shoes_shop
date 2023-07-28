@@ -1,6 +1,6 @@
 import React from "react";
-import { OrderProductLink } from "../../shared/UI/orderProductLink";
-import { topSalesItem } from "./model"
+import { topSalesItem } from "./model/type"
+import { NavLink } from "react-router-dom";
 
 interface ProductItemProps {
     product: topSalesItem;
@@ -18,7 +18,7 @@ const ProductItem: React.FC<ProductItemProps> = ({product, classNameItem}) => {
                   <div className="card-body">
                     <p className="card-text">{product.title}</p>
                     <p className="card-text">{product.price} руб.</p>
-                    <OrderProductLink link={product.id}/>
+                    <NavLink to={'/shoes_shop/product/'+product.id} className="btn btn-outline-primary">Заказать</NavLink>
                   </div>
                 </div>
               </div>

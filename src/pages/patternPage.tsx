@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
-import { Footer } from "../widgets/Footer"
+import { Footer } from "../widgets/footer/Footer"
 import { Banner } from "../shared/banner"
-import { Header } from "../widgets/Header"
+import { Header } from "../widgets/header/Header"
 
 
 interface PatternPageProps {

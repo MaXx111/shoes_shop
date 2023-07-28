@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { CatalogItem } from "./type";
+import { CatalogItem } from "./type.tsx";
 import { fetchCatalogCategoryes } from "../api/fetchCategoryes.ts";
 import { fetchCatalogItems } from "../api/fetchCatalogItems.ts";
 import { fetchMoreItems } from "../api/fetchMoreItems.ts";
