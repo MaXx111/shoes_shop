@@ -1,5 +1,5 @@
-import axios from "axios"
 import { createAsyncThunk } from "@reduxjs/toolkit"
+import { backend } from "../../../shared/api/backend"
 
 interface urlParams {
     length: number,
@@ -10,21 +10,21 @@ interface urlParams {
 export const fetchMoreItems = createAsyncThunk(
     'moreItems/fetchMore',
     async(urlParams: urlParams, thunkAPI) => {
+
         try {
-            const response = await axios.get(getUrl(urlParams.categoryId, urlParams.length, urlParams.searchValue))
-            
+            const response = await backend.get('items', {
+                params: {offset: urlParams.length, q: urlParams.searchValue, categoryId: urlParams.categoryId},
+                paramsSerializer: function paramsSerializer(params) {
+                    if(params.categoryId == 1) return `offset=${params.offset}`
+
+                    if(params.categoryId == 1) return `q=${params.q}&offset=${params.offset}`
+
+                    return `categoryId=${params.categoryId}&offset=${params.offset}`
+                }
+            })
             return response.data
         } catch (error) {
             return thunkAPI.rejectWithValue('Произошла ошибка при загрузке')
         }
     }
 )
-
-function getUrl(categoryId: number, length: number, seacrchValue = '') {
-
-    if(categoryId == 1) return `http://localhost:7070/api/items?offset=${length}`
-
-    if(categoryId == 0) return `http://localhost:7070/api/items?q=${seacrchValue}&offset=${length}`
-
-    return `http://localhost:7070/api/items?categoryId=${categoryId}&offset=${length}`
-}

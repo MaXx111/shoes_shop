@@ -1,11 +1,11 @@
-import axios from "axios"
 import { createAsyncThunk } from "@reduxjs/toolkit"
+import { backend } from "../../../shared/api/backend"
 
 export const fetchProductInfo = createAsyncThunk(
     'ProductInfo/fetchItem',
     async(idProduct: string, thunkAPI) => {
         try {
-            const response = await axios.get(`http://localhost:7070/api/items/${idProduct}`)
+            const response = await backend.get(`items/${idProduct}`)
             
             return response.data
         } catch (error) {
