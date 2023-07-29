@@ -1,5 +1,7 @@
+import { productID } from "../../../shared/model/brandtypes";
+
 export interface ProductItem {
-    id: number,
+    id: productID,
     images: string[],
     price: number,
     title: string

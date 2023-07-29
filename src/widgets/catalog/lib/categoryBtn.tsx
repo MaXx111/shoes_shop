@@ -1,10 +1,12 @@
+import { categoryID } from "../../../shared/model/brandtypes";
+
 interface CategoryBtnProps {
     linkHandler: (id: number) => void,
     data: {
-        id: number,
+        id: categoryID,
         title: string
     },
-    active: number
+    active: categoryID
 }
 
 export const CategoryBtn = ({linkHandler, data, active}: CategoryBtnProps) => {

@@ -1,8 +1,9 @@
+import { productSize } from "../../../shared/model/brandtypes"
 
 interface SizeItemProps {
-    size: string,
+    size: productSize,
     selected: string,
-    clickHandler: (size: string) => void
+    clickHandler: (size: productSize) => void
 }
 
 export const SizeItem = ({size, selected, clickHandler}: SizeItemProps) => {

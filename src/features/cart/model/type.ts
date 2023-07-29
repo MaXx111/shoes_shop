@@ -1,8 +1,10 @@
+import { productForCartId, productID, productSize } from "../../../shared/model/brandtypes";
+
 export interface CartItem {
     title: string,
-    size: string,
+    size: productSize,
     count: number,
     price: number,
-    productId: string,
-    id: number
+    productId: productForCartId,
+    id: productID
 }

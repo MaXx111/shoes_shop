@@ -1,13 +1,14 @@
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import { SizeItem } from "./sizeItem"
 import { ProductInfoSlice } from "../model/slice"
+import { productSize } from "../../../shared/model/brandtypes"
 
 export const ProductSizesControl = () => {
 
     const {product, selected, productCount} = useAppSelector(state => state.ProductInfoReducer)
     const dispatch = useAppDispatch()
 
-    const onSizeBtnClick = (size: string) => {
+    const onSizeBtnClick = (size: productSize) => {
 
         if (selected !== size) dispatch(ProductInfoSlice.actions.addSelected(size))
     }

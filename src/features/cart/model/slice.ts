@@ -16,7 +16,6 @@ const initialState: initialStateProps = {
     countItems: 0
 }
 
-
 export const CartSlice = createSlice({
     name: 'Cart',
     initialState,

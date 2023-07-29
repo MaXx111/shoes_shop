@@ -48,8 +48,6 @@ export const CartOrderForm = () => {
         setX(!x)
     }
 
-
-
     return(
         <>
             <section className="order" onSubmit={submitHandler}>

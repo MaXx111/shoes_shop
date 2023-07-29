@@ -1,12 +1,13 @@
 import { createSlice} from "@reduxjs/toolkit";
 import { fetchProductInfo } from "../api/productInfoApi";
 import { ProductItem } from "./type";
+import { productSize } from "../../../shared/model/brandtypes";
 
 interface initialStateProps {
     product: ProductItem,
     loading: boolean,
     error: null | string,
-    selected: string | null,
+    selected: productSize | null,
     productCount: number,
     allowToAdd: boolean
 }

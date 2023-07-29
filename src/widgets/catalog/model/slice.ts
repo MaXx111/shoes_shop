@@ -4,14 +4,15 @@ import { fetchCatalogCategoryes } from "../api/fetchCategoryes.ts";
 import { fetchCatalogItems } from "../api/fetchCatalogItems.ts";
 import { fetchMoreItems } from "../api/fetchMoreItems.ts";
 import { fetchSearchItems } from "../api/fetchSearchItems.ts";
+import { categoryID } from "../../../shared/model/brandtypes.ts";
 
 interface initialStateProps {
     products: CatalogItem[],
     loading: boolean,
     error: null | string,
-    selectedCategory: number,
+    selectedCategory: categoryID,
     categorys: {
-        id: number,
+        id: categoryID,
         title: string
     }[],
     loadingMoreItems: boolean,
@@ -23,7 +24,7 @@ const initialState = {
     products: [],
     loading: false,
     error: null,
-    selectedCategory: 1,
+    selectedCategory: 1 as categoryID,
     categorys: [],
     loadingMoreItems: false,
     allowMoreItems: true,

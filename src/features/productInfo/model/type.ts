@@ -1,3 +1,5 @@
+import { productID, productSize } from "../../../shared/model/brandtypes"
+
 export interface ProductItem {
     sku: string,
     manufacturer: string,
@@ -6,11 +8,11 @@ export interface ProductItem {
     season: string,
     reason: string,
     sizes: {
-        size: string,
+        size: productSize,
         available: boolean
     }[],
     images: string[],
     title: string,
     price: number,
-    id: number
+    id: productID
 }
