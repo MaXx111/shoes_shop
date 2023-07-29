@@ -25,7 +25,6 @@ export const TBodyForItems = () => {
         })
 
         setTotalCost(cost)
-        console.log(cartItems)
     }, [cartItems])
 
     return(
